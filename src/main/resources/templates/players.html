@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Spring Boot 2 Thymeleaf</title>
+</head>
+<body>
+  <h2>Premier League Player Information</h2>
+  <table>
+   <tr>
+     <th>First Name</th>
+     <th>Last Name</th>
+     <th>Position</th>
+     <th>Club</th>
+     <th>Manager</th>
+   </tr>
+   <tr th:each="player :${players}">
+      <td th:text="${player.firstName}">FirstName</td>
+      <td th:text=${player.lastName}>LastName</td>
+      <td th:text=${player.position}>Goal Keeper</td>
+      <td th:text=${player.club[0].name}>Club Name</td>
+      <td th:text=${player.club[0].manager.firstName}>Manager Name</td>
+   </tr>  
+  </table>
+</body>
+</html>
+

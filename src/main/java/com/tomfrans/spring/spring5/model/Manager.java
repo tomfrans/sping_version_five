@@ -1,19 +1,13 @@
 package com.tomfrans.spring.spring5.model;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 
 @Entity
-public class Player {
+public class Manager {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -21,76 +15,36 @@ public class Player {
 	
 	private String firstName;
 	private String lastName;
-	private String position;
 	
-	@ManyToMany(mappedBy = "players",fetch=FetchType.EAGER)
-	private List<Club> club = new ArrayList<Club>();	
-
-	
-
-	public Player() {
+	public Manager() {
 		
 	}
-
-
-	public Player(String firstName, String lastName, String position) {
+	
+	public Manager(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.position = position;
-	}
-	
-	
-	public Player(String firstName, String lastName, String position, List<Club> club) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.position = position;
-		this.club = club;
-	}
+	}	
 
-	
 	public Long getId() {
 		return id;
 	}
-
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-
 	public String getFirstName() {
 		return firstName;
 	}
-
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-
 	public String getLastName() {
 		return lastName;
 	}
-
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
-	public String getPosition() {
-		return position;
-	}
-
-	public void setPosition(String position) {
-		this.position = position;
-	}
-
-	public List<Club> getClub() {
-		return club;
-	}
-
-	public void setClub(List<Club> club) {
-		this.club = club;
-	}
-
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -108,7 +62,7 @@ public class Player {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Player other = (Player) obj;
+		Manager other = (Manager) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -117,13 +71,12 @@ public class Player {
 		return true;
 	}
 
-
 	@Override
 	public String toString() {
-		return "Player [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", position=" + position
-				+ ", club=" + club + "]";
+		return "Manager [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
-	
+
+
 	
 	
 }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Spring Boot 2 Thymeleaf</title>
+</head>
+<body>
+  <h2>Premier League Club Information</h2>
+  <table>
+   <tr>
+     <th>Name</th>
+     <th>Home Ground</th>
+     <th>Manager</th>
+   </tr>
+   <tr th:each="club :${clubs}">
+      <td th:text="${club.name}">Manchester United</td>
+      <td th:text=${club.homeground}>Old Trafford</td>
+      <td th:text=${club.manager.firstName}>Jose Mouricho</td>
+   </tr>  
+  </table>
+</body>
+</html>
+
