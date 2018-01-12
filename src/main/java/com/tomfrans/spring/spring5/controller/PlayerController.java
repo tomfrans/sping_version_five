@@ -15,7 +15,7 @@ public class PlayerController {
 		this.playerRepository = playerRepository;
 	}
 	
-	@RequestMapping("players")
+	@RequestMapping("/players")
 	public String getPlayers(Model model){
 		model.addAttribute("players",playerRepository.findAll());
 		return "players";

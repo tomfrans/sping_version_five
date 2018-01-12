@@ -1,9 +1,7 @@
 package com.tomfrans.spring.spring5.model;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class Player {
+public class Player implements BaseModel{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
