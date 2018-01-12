@@ -1,8 +1,5 @@
 package com.tomfrans.spring.spring5.bootstrap;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
