@@ -9,3 +9,4 @@ Spring boot application with spring-boot 2 and spring-5
 * Profiles 
 * Properties with profile
 * YAML files
+* Lombok 

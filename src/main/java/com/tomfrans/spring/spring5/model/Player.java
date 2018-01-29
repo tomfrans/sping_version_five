@@ -10,7 +10,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
 @Entity
+@Data
+@RequiredArgsConstructor
 public class Player implements BaseModel{
 
 	@Id
@@ -23,12 +28,6 @@ public class Player implements BaseModel{
 	
 	@ManyToMany(mappedBy = "players",fetch=FetchType.EAGER)
 	private List<Club> club = new ArrayList<Club>();	
-
-	
-
-	public Player() {
-		
-	}
 
 
 	public Player(String firstName, String lastName, String position) {
@@ -45,50 +44,7 @@ public class Player implements BaseModel{
 		this.club = club;
 	}
 
-	
-	public Long getId() {
-		return id;
-	}
-
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getPosition() {
-		return position;
-	}
-
-	public void setPosition(String position) {
-		this.position = position;
-	}
-
-	public List<Club> getClub() {
-		return club;
-	}
-
-	public void setClub(List<Club> club) {
-		this.club = club;
-	}
-
-
+	/*
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -121,7 +77,7 @@ public class Player implements BaseModel{
 		return "Player [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", position=" + position
 				+ ", club=" + club + "]";
 	}
-	
+	*/
 	
 	
 }
